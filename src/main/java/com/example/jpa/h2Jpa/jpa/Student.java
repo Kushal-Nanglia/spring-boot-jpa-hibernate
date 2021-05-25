@@ -3,8 +3,11 @@ package com.example.jpa.h2Jpa.jpa;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQuery(name="find_all_students", query="select s from Student s")
+
 public class Student {
 
 	@Id
