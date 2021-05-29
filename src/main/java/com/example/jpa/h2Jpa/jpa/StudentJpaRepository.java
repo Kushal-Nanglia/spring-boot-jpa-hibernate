@@ -37,4 +37,14 @@ public class StudentJpaRepository {
 		Student student = findById(id);
 		entityManager.remove(student);
 	}
+	
+	public void saveStudentWithPassport() {
+		Passport passport = new Passport("Z123456");
+		entityManager.persist(passport);
+
+		Student student = new Student("Mike", 100);
+
+		student.setPassport(passport);
+		entityManager.persist(student);	
+	}
 }
